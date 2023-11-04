@@ -23,6 +23,7 @@ import AddProvider from "./components/business/addProviders"
 import Transports from "./components/business/transports"
 import AddTransports from "./components/business/addTransports"
 import AddInput from "./components/process/input/addInput"
+import AddOutput from "./components/process/output/addOutput"
 
 import Inventory from "./components/reports/inventory"
 import Kardex from "./components/reports/kardex"
@@ -60,7 +61,9 @@ const routePath = [
     
     { path: '/operaciones/entradas', component: InputForm },
     { path: '/operaciones/entradas/:id', component: AddInput },
+
     { path: '/operaciones/salidas', component: OutputForm },
+    { path: '/operaciones/salidas/registro', component: AddOutput },
 
     { path: '/empresas/proveedores', component: Providers },
     { path: '/empresas/proveedores/nuevo', component: AddProvider },

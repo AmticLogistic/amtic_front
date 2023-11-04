@@ -198,7 +198,6 @@ const ListRequired = () => {
                                     <li>[ {d.cantidad} ] - {d.material}</li>
                                 ))
                             }
-
                         </ul>
                     </DialogContentText>
                 </DialogContent>

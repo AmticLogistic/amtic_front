@@ -90,6 +90,20 @@ const GetMateriales = async () => {
             console.log(err.message);
         });
 }
+
+const Getkardex= async () => {
+    return fetch(`${api_external}/report/kardex`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .catch((err) => {
+            console.log(err.message);
+        });
+}
+
 const GetServicios = async () => {
     return fetch(`${api_external}/almacen/listServicios`, {
         method: 'GET',
@@ -237,6 +251,20 @@ const obtenerEntradas = async () => {
         });
 }
 
+const SaveOutput = async (data) => {
+    return fetch(`${api_external}/process/saveOutput`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
+        .then(data => data.json())
+        .catch((err) => {
+            console.log(err.message);
+        });
+}
+
 const getDataOrder = async (id) => {
     return fetch(`${api_external}/utils/getOrderOne/${id}`, {
         method: 'GET',
@@ -263,6 +291,33 @@ const ListOrdenes = async () => {
         });
 }
 
+const listOutput = async () => {
+    return fetch(`${api_external}/process/listOutput`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .catch((err) => {
+            console.log(err.message);
+        });
+}
+
+const getCCostos = async () => {
+    return fetch(`${api_external}/utils/getCCostos`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => data.json())
+        .catch((err) => {
+            console.log(err.message);
+        });
+}
+
+
 
 export default {
     GetCategorias,
@@ -284,5 +339,9 @@ export default {
     getTrans,
     SaveInput,
     obtenerEntradas,
-    getDataOrder
+    getDataOrder,
+    getCCostos,
+    SaveOutput,
+    listOutput,
+    Getkardex,
 }
